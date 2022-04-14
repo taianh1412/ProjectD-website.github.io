@@ -1,0 +1,95 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Segoe UI';
+}
+body{
+    background-color: white;
+}
+.slg{
+    font-size: 30px;
+    color: black;
+    margin: 10px 0px;
+}
+.bai1{
+    text-align: center;
+    padding: 2px auto;
+    margin: 50px 0px;
+    background-color: white;
+}
+h2{
+    color: black;
+}
+.nd{
+    display: inline-block;
+    background-color: white;
+    border-radius: 10px;
+    margin: 70px 10%;
+     border: 1px solid black;
+}
+.nd h2{
+    padding: 20px 10px;
+}
+.nhap{
+    margin: 20px 10px;
+    display: block;
+    font-size: 30px;
+    color: black;
+}
+input{
+    border: none;
+}
+button{
+    margin: 10px 10px;
+    padding: 8px 10px;
+    font-size: 20px;
+    border-radius: 5px;
+    background-color: white;
+}
+button:hover {
+    background-color: gainsboro;
+    color: black;
+    /*box-shadow: 5px 5px 1px black;*/
+}
+button:active{
+    background-color: black;
+    color: white;
+    box-shadow: none;
+}
+.so{
+    text-align: center;
+    font-size: 30px;
+}
+.kq{
+    border: 1px solid black;
+    width: 570px;
+    height: 130px;
+    margin: 10px 10px;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+}
+#kq{
+    position: relative;
+    top: 5px;
+    left:5px;
+    display: block;
+    font-size: 20px;
+    margin: 0px;    
+    text-align: left;
+}
+.kq:hover{
+    border: 1px solid white;
+}
+.kq:hover #kq{
+    font-size: 28px;
+    font-weight: bolder;
+}
+sub{
+    font-size: 15px;
+}
+.time{
+    margin: 10px;
+    color: black;
+    font-size: 10px;
+}

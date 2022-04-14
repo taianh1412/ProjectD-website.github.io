@@ -1,0 +1,97 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"> </script>
+    <link rel="stylesheet" href="bai4.css">
+</head>
+
+<body ng-app="b4">
+    <div class="nd">
+        <form name="frm">
+            <h2>ĐĂNG KÝ THÀNH VIÊN</h2>
+            <div class="tt">
+                <input class="text" name="masv" ng-model="masv" required placeholder="Mã sinh viên"><br>
+                <em ng-if="frm.masv.$invalid">*Không được bỏ trống</em>
+            </div>
+            <div class="tt">
+                <input class="text" name="hoten" ng-model="hoten" required placeholder="Họ và tên"><br>
+                <em ng-if="frm.hoten.$invalid">*Không được bỏ trống</em>
+            </div>
+            <div class="tt">
+                <input type="email" class="text" name="email" ng-model="email" placeholder="Email"><br>
+                <em ng-if="frm.email.$invalid">*Email không hợp lệ</em>
+                </label>
+                <div class="tt">
+                    Giới tính: <br>
+                    <fieldset>
+                        <label class="checkbox"><input name="sex" type="radio" value="1" ng-model="sex">Nam</label>
+                        <label class="checkbox"><input name="sex" type="radio" value="2" ng-model="sex">Nữ</label><br>
+                    </fieldset>
+                    <a ng-if="!sex">*Vì sao tôi cần khai báo giới tính ?</a>
+                </div>
+                <div class="tt">
+                    Sở thích <br>
+                    <label class="checkbox"><input type="checkbox">Thể thao</label>
+                    <label class="checkbox"><input type="checkbox">Du lịch</label>
+                    <label class="checkbox"><input type="checkbox">Ẩm thực</label>
+                    <label class="checkbox"><input type="checkbox">Âm nhạc</label>
+                    <label class="checkbox"><input type="checkbox">Khác</label>
+                </div>
+                <div class="tt">
+                    Quốc tịch <br>
+                    <select id="nation" size="2">
+                        <option value="1">United States</option>
+                        <option value="2">Việt Nam</option>
+                    </select><br>
+                </div>
+                
+                <div class="tt">
+                    Ghi chú <br>
+                    <textarea cols="50" rows="5"></textarea>
+                </div>
+                <button type="button" onclick="return kiemtra()">Đăng ký </button>
+                <div id="kq"></div>
+        </form>
+        <script>
+            function kiemtra() {
+                thanhcong = true;
+                thongbao = "";
+                var masv = document.getElementById("masv");
+                if (masv.value.length == 0) {
+                    thongbao += "Vui long nhap ma so sv<br>";
+                    thanhcong = false;
+                }
+                var ten = document.getElementById("ten");
+                if (ten.value.length == 0) {
+                    thongbao += "Vui long nhap ten sv<br>";
+                    thanhcong = false;
+                }
+                var email = document.getElementById("email");
+                if (email.value.length == 0) {
+                    thongbao += "Vui long nhap email<br>";
+                    thanhcong = false;
+                }
+                var sex = document.getElementsByName("sex")
+                if (sex[0].checked == false && sex[1].checked == false) {
+                    thongbao += "Vui long chon gioi tinh<br>";
+                    thanhcong = false;
+                }
+                var nation = document.getElementById("nation");
+                if (nation.value == "") {
+                    thongbao += "Chon 1 quoc gia di <br>";
+                    thanhcong = false;
+                }
+                if (thongbao == "") thongbao = "Nhap dung du lieu";
+                document.getElementById("kq").innerHTML = thongbao;
+                return thanhcong;
+            }
+        </script>
+    </div>
+</body>
+<script src="bai4.js"></script>
+
+</html>
